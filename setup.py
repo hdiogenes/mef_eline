@@ -153,7 +153,7 @@ class Linter(SimpleCommand):
             cmd = 'yala *.py tests'
             check_call(cmd, shell=True)
             print('No linter error found.')
-        except RuntimeError as error:
+        except CalledProcessError as error:
             print('Linter check failed. Fix the error(s) above and try again.')
             print(error)
             exit(-1)
